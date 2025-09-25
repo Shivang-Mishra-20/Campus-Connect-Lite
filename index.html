@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CampusConnect — Dashboard</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Local CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>CampusConnect</h2>
+      <ul id="menu">
+        <li data-view="overview" class="active"><i class="fa fa-house"></i> Overview</li>
+        <li data-view="admissions"><i class="fa fa-user"></i> Admissions</li>
+        <li data-view="fee"><i class="fa fa-money-bill"></i> Fee</li>
+        <li data-view="hostel"><i class="fa fa-bed"></i> Hostel</li>
+        <li data-view="library"><i class="fa fa-book"></i> Library</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <header class="navbar">
+        <div>
+          <h1 id="pageTitle">Overview</h1>
+          <div class="muted">VIT Bhopal University — CampusConnect</div>
+        </div>
+        <div class="nav-actions">
+          <input id="globalSearch" placeholder="Search students, roll or email..." />
+          <button id="refreshBtn" title="Refresh data"><i class="fa fa-arrows-rotate"></i></button>
+        </div>
+      </header>
+
+      <section id="contentArea" class="content">
+        <!-- Overview default -->
+        <section id="overviewView" class="view">
+          <div class="cards">
+            <div class="card">
+              <p>Total Students</p>
+              <h3 id="totalStudents">—</h3>
+            </div>
+            <div class="card">
+              <p>Fees Collected</p>
+              <h3 id="totalFees">—</h3>
+            </div>
+            <div class="card">
+              <p>Hostel Occupancy</p>
+              <h3 id="hostelPercent">—</h3>
+            </div>
+            <div class="card">
+              <p>Books Issued</p>
+              <h3 id="booksIssued">—</h3>
+            </div>
+          </div>
+
+          <div class="charts">
+            <div class="chart-card">
+              <canvas id="feeChart"></canvas>
+            </div>
+            <div class="chart-card">
+              <canvas id="hostelChart"></canvas>
+            </div>
+          </div>
+
+          <div class="table" id="overviewTableWrap">
+            <h2>Recent Admissions</h2>
+            <table id="overviewTable">
+              <thead>
+                <tr><th>Roll</th><th>Name</th><th>Course</th><th>Email</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Admissions view -->
+        <section id="admissionsView" class="view" style="display:none">
+          <div class="table">
+            <h2>Admissions</h2>
+            <table id="admissionsTable">
+              <thead><tr><th>Roll</th><th>Name</th><th>Course</th><th>Email</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Fee view -->
+        <section id="feeView" class="view" style="display:none">
+          <div class="table">
+            <h2>Fee Records</h2>
+            <table id="feeTable">
+              <thead><tr><th>Timestamp</th><th>Roll</th><th>Name</th><th>Fee Type</th><th>Amount</th><th>Payment Mode</th><th>Receipt</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Hostel view -->
+        <section id="hostelView" class="view" style="display:none">
+          <div class="table">
+            <h2>Hostel Applications</h2>
+            <table id="hostelTable">
+              <thead><tr><th>Timestamp</th><th>Roll</th><th>Name</th><th>Preference</th><th>Allocation</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Library view -->
+        <section id="libraryView" class="view" style="display:none">
+          <div class="table">
+            <h2>Library</h2>
+            <table id="libraryTable">
+              <thead><tr><th>Timestamp</th><th>Roll</th><th>Name</th><th>Book</th><th>Status</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
