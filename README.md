@@ -42,26 +42,11 @@ Our system is built on a simple, yet powerful 4-step workflow:
 * **Automation Logic:** Google Apps Script (JavaScript-based)
 * **Data Visualization:** Google Looker Studio / Microsoft Power BI
 
-## 🚀 Getting Started (Conceptual Setup)
-
-To replicate this project, you would need to configure the cloud services as follows:
-
-1.  **Prerequisites:** An active Google Workspace or Microsoft 365 institutional account.
-2.  **Google Forms:** Create the necessary forms for admissions, fees, etc., with appropriate validation.
-3.  **Google Sheets:** Create a master spreadsheet. Link this sheet as the destination for all your form responses. Structure it with separate tabs for different modules ('Student Demographics', 'Fee Status', etc.).
-4.  **Google Apps Script:**
-    * Open the Google Sheet and go to `Extensions > Apps Script`.
-    * Copy the code from the `.js` or `.gs` files in this repository into the script editor.
-    * Set up triggers (e.g., an `onFormSubmit` trigger) to run the relevant functions automatically when a form is submitted.
-5.  **Google Looker Studio:**
-    * Create a new report in Looker Studio.
-    * Add the Google Sheet as the data source.
-    * Build charts and dashboards to visualize the data from the sheet in real-time.
-
 ## 🤝 The Team (Team OneView)
 
 * **Shivang Mishra:** Project Lead & Backend Architect
 * **Lakshya Sahu:** Frontend & UI/UX Designer
 * **Shriya Dhawan:** Database & Automation Specialist
 * **Chinmay Bhardwaj:** Dashboard & Data Visualization Expert
-*
+* **Lakshay Khtour:** Documentation & Presentation Lead
+* **Arpit Goyal:** System Integration & Testing Lead
